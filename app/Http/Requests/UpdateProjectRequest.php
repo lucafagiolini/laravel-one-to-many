@@ -29,6 +29,7 @@ class UpdateProjectRequest extends FormRequest
             'cover_img' => 'file|nullable',
             'tecnologies' => 'string|nullable',
             'link' => 'string|nullable',
+            'categories' => 'numeric|nullable'
         ];
     }
 
@@ -40,6 +41,7 @@ class UpdateProjectRequest extends FormRequest
             'cover_img' => 'Image isn\'t valid ',
             'tecnologies' => 'Tecnologies isn\'t valid ',
             'link' => 'Link isn\'t valid ',
+            'categories' => 'Categories isn\'t valid '
         ];
     }
 }

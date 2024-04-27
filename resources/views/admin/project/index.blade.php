@@ -10,10 +10,9 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Project Name</th>
+                    <th scope="col">Category</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Tecnologies</th>
-                    <th scope="col">Project Link</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
 
@@ -22,10 +21,11 @@
                     <tr>
                         <th scope="row">{{ $project->id }}</th>
                         <td>{{ $project->title }}</td>
+                        <td>{{ $project->category->title }}</td>
                         <td> {{ $project->description }}</td>
-                        <td> {{ $project->cover_image }}</td>
-                        <td> {{ $project->tecnologies }}</td>
-                        <td> {{ $project->link }}</td>
+
+
+
                         <td scope="col">
                             <a href="{{ route('admin.project.show', $project->id) }}">
                                 <button class="btn btn-outline-success">Details</button>

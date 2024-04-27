@@ -8,6 +8,8 @@
             @csrf
             @method('PUT')
 
+            <button type="submit" class="btn btn-warning">Update</button>
+
 
 
             {{-- title input --}}
@@ -80,7 +82,26 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-warning">Update</button>
+            {{-- category input --}}
+            <div class="mb-4">
+                <label for="category_id @error('category_id') is-invalid @enderror" class="form-label">Category</label>
+                <select class="form-select" id="category_id" name='category_id'>
+
+
+                    <option value="0">Undefined</option>
+
+                    @foreach ($categories as $category)
+                        <option value="{{ old('category_id') }} {{ $category->id }}"> {{ $category->title }}</option>
+                    @endforeach
+
+
+
+                    @error('category_id')
+                        <div class="invalid-feedback ">
+                            {{ $message }}
+                        </div>
+                    @enderror
+            </div>
         </form>
 
 

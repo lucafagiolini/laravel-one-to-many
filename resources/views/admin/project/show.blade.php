@@ -21,13 +21,16 @@
 
                                 </li>
 
+
                                 <li class="list-group-item">
-                                    <p class="card-text text-capitalize">description: {{ $project->description }}</p>
+                                    <p class="card-text text-capitalize">category: {{ $project->category->title }}</p>
 
                                 </li>
 
                                 <li class="list-group-item">
-                                    <p class="card-text text-capitalize">category: {{ $project->category->title }}</p>
+                                    <small class="text-body-secondary text-capitalize">
+                                        <p class="card-text text-capitalize">description: {{ $project->description }}</p>
+                                    </small>
 
                                 </li>
 

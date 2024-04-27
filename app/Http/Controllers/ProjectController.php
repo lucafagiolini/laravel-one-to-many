@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,6 +17,7 @@ class ProjectController extends Controller
     {
         $project = Project::all();
 
+
         return view('admin.project.index', compact('project'));
     }
 
@@ -24,7 +26,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.project.create');
+        $categories = Category::all();
+
+        return view('admin.project.create', compact('categories'));
     }
 
     /**
@@ -57,7 +61,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.project.show', compact('project'));
+        $categories = Category::all();
+        return view('admin.project.show', compact('project', 'categories'));
     }
 
     /**
@@ -65,7 +70,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.project.edit', compact('project'));
+        $categories = Category::all();
+        return view('admin.project.edit', compact('project', 'categories'));
     }
 
     /**

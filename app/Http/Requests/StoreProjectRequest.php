@@ -29,6 +29,7 @@ class StoreProjectRequest extends FormRequest
             'cover_img' => 'file|nullable',
             'tecnologies' => 'required|string',
             'link' => 'required|string',
+            'categories' => 'numeric|nullable'
         ];
     }
 
@@ -40,6 +41,7 @@ class StoreProjectRequest extends FormRequest
             'cover_img' => 'Image file type is invalid',
             'tecnologies.required' => 'Tecnologies is required',
             'link.required' => 'Link is required',
+            'categories.numeric' => 'Categories is required'
         ];
     }
 }

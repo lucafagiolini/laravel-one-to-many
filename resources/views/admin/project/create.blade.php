@@ -6,6 +6,8 @@
 
         <form action="{{ route('admin.project.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <button type="submit" class="btn btn-primary">create</button>
+
             {{-- title input --}}
             <div class="mb-4 pt-4">
 
@@ -21,6 +23,7 @@
 
             </div>
 
+
             {{-- description input --}}
             <div class="mb-4">
                 <label for="description" class="form-label">Project description</label>
@@ -33,9 +36,8 @@
                 @enderror
             </div>
 
-
             {{-- img input --}}
-            <div class="mb-4 pt-4">
+            <div class="mb-4">
                 <label for="cover_image" class="form-label">Project image</label>
                 <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
                     name='cover_image' placeholder="">
@@ -76,7 +78,25 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">create</button>
-        </form>
+            {{-- category input --}}
+            <div class="mb-4">
+                <label for="category_id @error('category_id') is-invalid @enderror" class="form-label">Category</label>
+                <select class="form-select" id="category_id" name='category_id'>
+
+                    <option value="0">Undefined</option>
+
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                    @endforeach
+
+
+                    @error('category_id')
+                        <div class="invalid-feedback ">
+                            {{ $message }}
+                        </div>
+                    @enderror
+            </div>
+
+
     </div>
 @endsection
