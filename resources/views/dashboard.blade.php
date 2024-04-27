@@ -20,10 +20,12 @@
                         {{ __('You are logged in!') }}
                     </div>
                 </div>
-                <div class="d-flex justify-content-center p-5">
+                <div class="d-flex justify-content-center p-5 gap-2">
                     <a href="{{ route('admin.project.index') }}" class="btn btn-danger btn-sm">Project Management</a>
+                    <a href="{{ route('admin.category.index') }}" class="btn btn-warning btn-sm">Category Management</a>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

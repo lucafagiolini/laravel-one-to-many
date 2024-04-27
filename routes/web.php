@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProjectController;
 use App\Models\Project;
 
@@ -49,5 +50,7 @@ Route::middleware(['auth', 'verified'])
             Route::get('/users', [DashboardController::class, 'users'])->name('users');
 
             Route::resource('/project', ProjectController::class);
+
+            Route::resource('/category', CategoryController::class);
         }
     );

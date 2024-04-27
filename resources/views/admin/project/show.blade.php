@@ -27,6 +27,11 @@
                                 </li>
 
                                 <li class="list-group-item">
+                                    <p class="card-text text-capitalize">category: {{ $project->category->title }}</p>
+
+                                </li>
+
+                                <li class="list-group-item">
                                     <p class="card-text text-capitalize">
                                         <small class="text-body-secondary text-capitalize">
                                             tecnologies: {{ $project->tecnologies }}
