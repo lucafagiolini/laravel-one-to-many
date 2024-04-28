@@ -39,7 +39,6 @@
                 @enderror
             </div>
 
-
             {{-- img input --}}
             <div class="mb-4 pt-4">
                 <label for="cover_image" class="form-label">Project image</label>
@@ -84,24 +83,20 @@
 
             {{-- category input --}}
             <div class="mb-4">
-                <label for="category_id @error('category_id') is-invalid @enderror" class="form-label">Category</label>
+                <label for="category_id" class="form-label">Category</label>
                 <select class="form-select" id="category_id" name='category_id'>
 
 
-                    <option value="0">Undefined</option>
+                    <option value="">Undefined</option>
 
                     @foreach ($categories as $category)
-                        <option value="{{ old('category_id') }} {{ $category->id }}"> {{ $category->title }}</option>
+                        <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : '' }}>
+                            {{ $category->title }}</option>
                     @endforeach
-
-
-
-                    @error('category_id')
-                        <div class="invalid-feedback ">
-                            {{ $message }}
-                        </div>
-                    @enderror
             </div>
+
+
+
         </form>
 
 
